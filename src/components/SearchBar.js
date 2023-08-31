@@ -40,10 +40,10 @@ function SearchBar() {
   return (
     <>
       <div></div>
-      <div><h1 style={{'text-align': 'center'}}>React + Star Wars API</h1></div>
+      <div><h1 style={{'textAlign': 'center'}}>React + Star Wars API</h1></div>
       <div></div>
       <div></div>
-      <div style={{'text-align': 'center'}}>
+      <div style={{'textAlign': 'center'}}>
         <select value={dropdownValue} onChange={handleDropdownChange}>
           {options.map((option)=>(
             <option value={option.value}>{option.text}</option>

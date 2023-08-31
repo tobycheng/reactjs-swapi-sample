@@ -14,7 +14,7 @@ const NavLink = (props) => {
 
   return (props.url === null) ? <></> : (
     <div className="navlink">
-      <a href="/#" onClick={()=>{handleNavLink(props.url)}}>{props.label}</a>
+      <button onClick={()=>{handleNavLink(props.url)}}>{props.label}</button>
     </div>
   )
 }
