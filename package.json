@@ -1,6 +1,8 @@
 {
-  "name": "reactjs-swapi-demo",
+  "name": "reactjs-swapi-sample",
   "version": "0.1.0",
+  "arthur": "Toby Cheng",
+  "license": "MIT",
   "homepage": "https://tobycheng.github.io/reactjs-swapi-sample/",
   "private": true,
   "dependencies": {
