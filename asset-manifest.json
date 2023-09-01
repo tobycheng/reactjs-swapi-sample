@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/reactjs-swapi-sample/static/css/main.f215652d.css",
-    "main.js": "/reactjs-swapi-sample/static/js/main.86277980.js",
+    "main.js": "/reactjs-swapi-sample/static/js/main.6eac9390.js",
     "index.html": "/reactjs-swapi-sample/index.html",
     "main.f215652d.css.map": "/reactjs-swapi-sample/static/css/main.f215652d.css.map",
-    "main.86277980.js.map": "/reactjs-swapi-sample/static/js/main.86277980.js.map"
+    "main.6eac9390.js.map": "/reactjs-swapi-sample/static/js/main.6eac9390.js.map"
   },
   "entrypoints": [
     "static/css/main.f215652d.css",
-    "static/js/main.86277980.js"
+    "static/js/main.6eac9390.js"
   ]
 }
