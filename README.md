@@ -4,4 +4,4 @@ This is a simple React App that makes https requests to [SWAPI](https://swapi.de
 
 ## Live Demo
 
-[https://tobycheng.github.io/reactjs-swapi-sample/]https://tobycheng.github.io/reactjs-swapi-sample/()
+[reactjs-swapi-sample - Live Demo](https://tobycheng.github.io/reactjs-swapi-sample/)
