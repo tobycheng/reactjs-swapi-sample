@@ -1,6 +1,16 @@
 import sendRequest from "./SendRequest";
 import { useDropdownContext } from "../context/DropdownContext";
 
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#FFE81F',
+    },
+  },
+});
 
 const NavLink = (props) => {
   const {setResponse, setLoading} = useDropdownContext();
@@ -12,10 +22,28 @@ const NavLink = (props) => {
     setLoading(false)
   }
 
-  return (props.url === null) ? <></> : (
-    <div className="navlink">
-      <button onClick={()=>{handleNavLink(props.url)}}>{props.label}</button>
-    </div>
+
+  return (
+    <ThemeProvider theme={theme}>
+      <div className="navlink">
+        <Button 
+          variant="outlined"
+          disabled={props.url === null}
+          onClick={()=>{handleNavLink(props.url)}}
+          sx={[
+            { color: 'primary.main', borderColor: 'primary.main' },
+            (theme) => ({
+              '&:hover': {
+                color: 'black',
+                bgcolor: 'primary.main',
+              },
+            }),
+          ]}
+        >
+        {props.label}
+        </Button>
+      </div>
+    </ThemeProvider>
   )
 }
 
