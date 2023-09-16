@@ -16,4 +16,6 @@ jobs:
       - name: Deploy Live Demo
         run: |
           node --version
+          npm --version
+          npm run deploy
       - run: echo "🍏 This job's status is ${{ job.status }}."
