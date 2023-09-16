@@ -13,4 +13,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Deploy Live Demo
+        run: |
+          node --version
       - run: echo "🍏 This job's status is ${{ job.status }}."
