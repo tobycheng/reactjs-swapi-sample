@@ -94,7 +94,7 @@ const LoadBar = () => {
   return (!loading) ? <></> : (
     <>
       <div></div>
-      <div className="loadbar">Loading...</div>
+      <div className="loadbar">Loading....</div>
       <div></div>
     </>
   )
