@@ -56,39 +56,6 @@ const selectTheme = createTheme({
   }
 })
 
-// const selectTheme = createTheme({
-//   root: {
-//     width: 200,
-//     "& .MuiOutlinedInput-input": {
-//       color: "green"
-//     },
-//     "& .MuiInputLabel-root": {
-//       color: "green"
-//     },
-//     "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-//       borderColor: "green"
-//     },
-//     "&:hover .MuiOutlinedInput-input": {
-//       color: "red"
-//     },
-//     "&:hover .MuiInputLabel-root": {
-//       color: "red"
-//     },
-//     "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-//       borderColor: "red"
-//     },
-//     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input": {
-//       color: "purple"
-//     },
-//     "& .MuiInputLabel-root.Mui-focused": {
-//       color: "purple"
-//     },
-//     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-//       borderColor: "purple"
-//     }
-//   }
-// });
-
 const LoadBar = () => {
   const {loading} = useDropdownContext();
   return (!loading) ? <></> : (
