@@ -4,7 +4,7 @@ This is a simple [React](https://react.dev/) App that loads data from [SWAPI - T
 
 ## Live Demo
 
-[reactjs-swapi-sample - Live Demo](https://tobycheng.github.io/reactjs-swapi-sample/)
+[reactjs-swapi-sample - Live Demo](https://tobycheng.github.io/reactjs-swapi-sample/){:target="_blank"}
 
 ## Built with
 * [React.js](https://react.dev/)
