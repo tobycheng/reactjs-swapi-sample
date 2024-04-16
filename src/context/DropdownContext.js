@@ -7,7 +7,7 @@ export function useDropdownContext() {
 }
 
 export function DropdownContext ({ children }) {
-  const [dropdownValue, setDropdownValue] = useState("films");
+  const [dropdownValue, setDropdownValue] = useState("");
   const [response, setResponse] = useState({});
   const [loading, setLoading] = useState(false);
 
