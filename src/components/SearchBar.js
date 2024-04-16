@@ -39,10 +39,13 @@ const selectTheme = createTheme({
         },
         select: {
           ":hover": {
-            backgroundColor: "#b2a215",
+            backgroundColor: "#332e06",
             // border: '2px solid #b2a215',
           },
         },
+        icon: {
+          color: '#FFE81F',
+        }
       },
     },
     MuiList: {
@@ -110,6 +113,15 @@ function SearchBar() {
                 value={dropdownValue}
                 label="Category"
                 onChange={handleDropdownChange}
+                sx={{
+                  '.MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#FFE81F',
+                  },
+                  '&:hover .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#FFE81F',
+                    borderWidth: '0.15rem',
+                  },
+                }}
               >
                 {options.map((option)=>(
                   <MenuItem value={option.value}>{option.text}</MenuItem>
