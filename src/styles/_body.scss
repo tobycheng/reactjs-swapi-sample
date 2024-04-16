@@ -1,0 +1,12 @@
+body {
+  background-color: $colorBlack;
+}
+
+.grid-container {
+  font-family: Helvetica;
+  font-weight: bold;
+  color: $colorYellow;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 1em;
+}

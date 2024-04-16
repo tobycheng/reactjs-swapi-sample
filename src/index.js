@@ -1,11 +1,11 @@
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom/client";
 
 import SearchBar from "./components/SearchBar";
 import Cards from "./components/Cards";
 
-import { DropdownContext } from './context/DropdownContext';
+import { DropdownContext } from "./context/DropdownContext";
 
-import "./style.css";
+import "./styles/main.scss";
 
 const SWAPI = () => {
   return (
