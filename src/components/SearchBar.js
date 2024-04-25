@@ -1,85 +1,34 @@
 import sendRequest from "./SendRequest";
+
+import baseTheme from "../styles/baseTheme";
 import { useDropdownContext } from "../context/DropdownContext";
 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import SearchIcon from '@mui/icons-material/Search';
 
-const selectTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#FFE81F',
-      dark: '#b2a215',
-    },
-  },
+const mySelectTheme = createTheme(baseTheme, {
   components: {
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          color: '#FFE81F'
-        }
-      }
-    },
-    MuiBaseInput: {
-      styleOverrides: {
-        root: {
-          border: '1px #FFE81F'
-        }
-      }
-    },
     MuiSelect: {
       styleOverrides: {
-        root: {
-          color: '#FFE81F',
-          border: '1px #FFE81F',
-        },
-        select: {
-          ":hover": {
-            backgroundColor: "#332e06",
-            // border: '2px solid #b2a215',
-          },
-        },
-        icon: {
-          color: '#FFE81F',
+        iconOutlined: {
+          color: baseTheme.palette.primary.main,
         }
       },
-    },
-    MuiList: {
-      styleOverrides:{
-        root: {
-          color: '#FFE81F',
-          backgroundColor: "black",
-        }
-      }
     },
   }
 })
 
-const LoadBar = () => {
-  const {loading} = useDropdownContext();
-  return (!loading) ? <></> : (
-    <>
-      <div></div>
-      <div className="loadbar">Loading....</div>
-      <div></div>
-    </>
-  )
-}
-
-function SearchBar() {
-  const options = [
-    {text: "Films", value:"films"},
-    {text: "People", value:"people"},
-    {text: "Planets", value:"planets"},
-    {text: "Species", value:"species"},
-    {text: "Starships", value:"starships"},
-    {text: "Vehicles", value:"vehicles"},
-  ]
-  const {dropdownValue, setDropdownValue, setResponse, setLoading} = useDropdownContext();
+const SearchBar = () => {
+  const selectOptions = ["Films", "People", "Planets", "Species", "Starships", "Vehicles"]
+  const {dropdownValue, setDropdownValue, setResponse, setIsLoading} = useDropdownContext();
   
   const handleDropdownChange = (event) => {
     setDropdownValue(event.target.value)
@@ -87,55 +36,35 @@ function SearchBar() {
   };
 
   const handleSearch = async (value) => {
-    const url =  "https://swapi.dev/api/"+value+"/";
-    setLoading(true)
+    const url =  "https://swapi.py4e.com/api/"+value+"/";
+    setIsLoading(true)
     const resp = await sendRequest(url)
     setResponse(resp)
-    setLoading(false)
+    setIsLoading(false)
   }
 
   return (
-    <>
-      <div></div>
-      <div><h1 style={{'textAlign': 'center'}}>ReactJS + Star Wars API</h1></div>
-      <div></div>
-
-      <div></div>
-      <div style={{'textAlign': 'center'}}>
-
-        <ThemeProvider theme={selectTheme}>
-          <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Category</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={dropdownValue}
-                label="Category"
-                onChange={handleDropdownChange}
-                sx={{
-                  '.MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#FFE81F',
-                  },
-                  '&:hover .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#FFE81F',
-                    borderWidth: '0.15rem',
-                  },
-                }}
-              >
-                {options.map((option)=>(
-                  <MenuItem value={option.value}>{option.text}</MenuItem>
-                ))}
-              </Select>
-              <Button variant="contained" onClick={()=>handleSearch(dropdownValue)}>Search</Button>
-            </FormControl>
-          </Box>
-        </ThemeProvider>
-      </div>
-      <div></div>
-
-      <LoadBar />
-    </>
+    <ThemeProvider theme={mySelectTheme}>
+      <Box>
+        <FormControl fullWidth>
+          <InputLabel id="category-select-label">Category</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            value={dropdownValue}
+            label="Category"
+            onChange={handleDropdownChange}
+          >
+            {selectOptions.map((option)=>(
+              <MenuItem key={option.toLowerCase()} value={option.toLowerCase()}>{option}</MenuItem>
+            ))}
+          </Select>
+          <Button variant="contained" onClick={()=>handleSearch(dropdownValue)}>
+            <SearchIcon />Search
+          </Button>
+        </FormControl>
+      </Box>
+    </ThemeProvider>
   )
 }
 
