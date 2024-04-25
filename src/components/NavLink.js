@@ -1,48 +1,57 @@
 import sendRequest from "./SendRequest";
 import { useDropdownContext } from "../context/DropdownContext";
 
+import {
+  IconButton,
+  Stack,
+} from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Button from '@mui/material/Button';
+
+import NavigateBeforeRoundedIcon from '@mui/icons-material/NavigateBeforeRounded';
+import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
+
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#FFE81F',
-    },
-  },
+  // palette: {
+  //   primary: {
+  //     main: '#FFE81F',
+  //   },
+  // },
 });
 
 const NavLink = (props) => {
-  const {setResponse, setLoading} = useDropdownContext();
+  const {setResponse, setIsLoading} = useDropdownContext();
 
   const handleNavLink = async (url) => {
-    setLoading(true)
+    setIsLoading(true)
     const resp = await sendRequest(url)
     setResponse(resp)
-    setLoading(false)
+    setIsLoading(false)
   }
-
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="navlink">
-        <Button 
-          variant="outlined"
-          disabled={props.url === null}
-          onClick={()=>{handleNavLink(props.url)}}
-          sx={[
-            { color: 'primary.main', borderColor: 'primary.main' },
-            (theme) => ({
-              '&:hover': {
-                color: 'black',
-                bgcolor: 'primary.main',
-              },
-            }),
-          ]}
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <IconButton 
+        disabled={props.prevUrl === null}
+        onClick={()=>{handleNavLink(props.prevUrl)}}
+        color="primary"
         >
-        {props.label}
-        </Button>
-      </div>
+          <NavigateBeforeRoundedIcon />
+        </ IconButton>
+        
+        <IconButton
+        disabled={props.nextUrl === null}
+        onClick={()=>{handleNavLink(props.nextUrl)}}
+        color="primary"
+        >
+          <NavigateNextRoundedIcon />
+        </ IconButton>
+      </ Stack>
     </ThemeProvider>
   )
 }

@@ -7,13 +7,22 @@ export function useDropdownContext() {
 }
 
 export function DropdownContext ({ children }) {
-  const [dropdownValue, setDropdownValue] = useState("");
+  const [dropdownValue, setDropdownValue] = useState("films");
   const [response, setResponse] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
 
   return (
-    <dropdownContext.Provider value={{dropdownValue, setDropdownValue: setDropdownValue, response, setResponse: setResponse, loading, setLoading: setLoading}}>
+    <dropdownContext.Provider value={
+      {
+        dropdownValue, 
+        setDropdownValue: setDropdownValue, 
+        response, 
+        setResponse: setResponse, 
+        isLoading, 
+        setIsLoading: setIsLoading
+      }
+      }>
       {children}
     </dropdownContext.Provider>
   );
