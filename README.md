@@ -1,6 +1,6 @@
 # Reactjs-swapi-sample
 
-This is a simple [React](https://react.dev/) App that loads data from [SWAPI - The Star Wars API](https://swapi.dev/).
+This is a simple [React](https://react.dev/) App that loads data from [SWAPI - The Star Wars API](https://swapi.py4e.com/).
 
 ## Live Demo
 
@@ -9,7 +9,7 @@ This is a simple [React](https://react.dev/) App that loads data from [SWAPI - T
 ## Built with
 * [React.js](https://react.dev/)
 * [Material-UI](https://mui.com/)
-* [SWAPI](https://swapi.dev/)
+* [SWAPI](https://swapi.py4e.com/)
 
 ## License
 [MIT](https://github.com/tobycheng/reactjs-swapi-sample/blob/main/README.md)
