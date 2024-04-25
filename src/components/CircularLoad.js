@@ -1,18 +1,20 @@
-import baseTheme from "../styles/baseTheme";
 import { useDropdownContext } from "../context/DropdownContext";
 
-import { ThemeProvider } from '@mui/material/styles';
+import {
+  Backdrop
+} from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
 const CircularLoad = () => {
   const {isLoading} = useDropdownContext();
-  return (!isLoading) ? <></> : (
-    <ThemeProvider theme={baseTheme}>
-      <div></div>
-      <div className="loadbar"><CircularProgress/></div>
-      <div></div>
-    </ ThemeProvider>
+  return (
+    <Backdrop
+    open={isLoading}
+    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    >
+      <CircularProgress />
+    </Backdrop>
   )
 }
 

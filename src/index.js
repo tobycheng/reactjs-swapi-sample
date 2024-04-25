@@ -1,8 +1,9 @@
 import ReactDOM from "react-dom/client";
 
-import Title from "./components/Title";
+import CircularLoad from "./components/CircularLoad";
 import ResultContainer from "./components/ResultContainer";
 import SearchBar from "./components/SearchBar";
+import Title from "./components/Title";
 import { DropdownContext } from "./context/DropdownContext";
 
 import baseTheme from "./styles/baseTheme";
@@ -20,6 +21,7 @@ const SWAPI = () => {
       <CssBaseline />
       <DropdownContext>
         <Box textAlign="center">
+          <CircularLoad />
           <Title />
           <SearchBar />
           <ResultContainer />
