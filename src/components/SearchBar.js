@@ -59,8 +59,12 @@ const SearchBar = () => {
               <MenuItem key={option.toLowerCase()} value={option.toLowerCase()}>{option}</MenuItem>
             ))}
           </Select>
-          <Button variant="contained" onClick={()=>handleSearch(dropdownValue)}>
-            <SearchIcon />Search
+          <Button 
+          variant="contained" 
+          onClick={()=>handleSearch(dropdownValue)}
+          startIcon={<SearchIcon />}
+          >
+            Search
           </Button>
         </FormControl>
       </Box>
