@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/reactjs-swapi-sample/static/js/main.e7bd8e4c.js",
+    "main.js": "/reactjs-swapi-sample/static/js/main.a7c57034.js",
     "index.html": "/reactjs-swapi-sample/index.html",
-    "main.e7bd8e4c.js.map": "/reactjs-swapi-sample/static/js/main.e7bd8e4c.js.map"
+    "main.a7c57034.js.map": "/reactjs-swapi-sample/static/js/main.a7c57034.js.map"
   },
   "entrypoints": [
-    "static/js/main.e7bd8e4c.js"
+    "static/js/main.a7c57034.js"
   ]
 }
