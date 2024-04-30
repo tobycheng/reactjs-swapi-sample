@@ -6,7 +6,6 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
-  Typography,
 } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
