@@ -9,7 +9,7 @@ const ResultContainer = () => {
   const {response} = useDropdownContext();
 
   return (Object.keys(response).length === 0) ? (
-    <>No data</>
+    <></>
   ) : (
     <Box>
       <NavLink response={response}/>

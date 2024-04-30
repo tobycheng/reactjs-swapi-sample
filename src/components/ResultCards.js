@@ -5,6 +5,8 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Box,
+  Typography,
 } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -38,15 +40,27 @@ const ResultCards = () => {
       {response.results.map((result)=>{
         return (
           <Accordion>
-            <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            >
-              <h2>{(dropdownValue === "films") ? result["title"] : result["name"]}</h2>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <h2>{result[typeKeys[dropdownValue][0]]}</h2>
             </AccordionSummary>
             <AccordionDetails>
-              {typeKeys[dropdownValue].map((key)=>{
-                return <div>{key.replaceAll("_", " ")}: {result[key]}</div>
-              })}
+              {
+                typeKeys[dropdownValue].map((key)=>{
+                  return (
+                    <Box sx={{display:'flex', justifyContent:'center'}}>
+                      <Box 
+                        sx={(theme) => ({
+                          textTransform: 'capitalize',
+                          color: theme.palette.text.secondary,
+                        })}
+                      >
+                        {key.replace("_", " ")}:
+                      </Box>
+                      <Box> {result[key]}</Box>
+                    </Box>
+                  )
+                })
+              }
             </AccordionDetails>
           </Accordion>
         )
